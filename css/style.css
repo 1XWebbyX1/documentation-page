@@ -1,0 +1,113 @@
+body {
+  background: white;
+}
+
+#menu {
+  display: none;
+  position: fixed;
+  top: 2%;
+  right: 0;
+  padding: 4%;
+  font-size: 1.2em;
+}
+
+#navbar {
+  position: fixed;
+  width: 20%;
+  height: 100%;
+  background: #333333;
+  border-top: 4px solid #880E4F;
+  box-shadow: 2px 0 2px black;
+  overflow-y: scroll;
+}
+#navbar header {
+  margin-left: 5%;
+  font-size: 2em;
+  padding-top: 8%;
+  color: black;
+}
+#navbar ul {
+  margin: 0;
+  padding: 0;
+}
+#navbar ul a {
+  text-decoration: none;
+  border-bottom: 2px solid grey;
+  box-shadow: 0 1px 1px #1a0000;
+}
+#navbar ul a li {
+  color: grey;
+  list-style-type: none;
+  padding-top: 4%;
+  font-size: 1.2em;
+}
+#navbar ul a li:hover {
+  color: #880E4F;
+}
+#navbar ul a.active {
+  background: #880E4F;
+  color: white;
+}
+
+#main-doc {
+  margin-left: 20%;
+  margin-top: 0;
+  width: 80%;
+  height: 100%;
+}
+#main-doc > header {
+  font-size: 2.5em;
+  padding: 4%;
+  border-top: 4px solid #880E4F;
+  border-left: 4px solid black;
+  box-shadow: 0px 2px 1px black inset;
+}
+#main-doc section {
+  margin: 4%;
+}
+#main-doc section > header {
+  border-bottom: 2px solid #880E4F;
+  font-size: 2em;
+  font-weight: bold;
+  padding-left: 1%;
+}
+#main-doc section > article {
+  padding: 2%;
+}
+#main-doc section > article > code {
+  display: block;
+  padding: 2%;
+  background: #e6e6e6;
+  border-left: 4px solid #3F51B5;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  body #navbar {
+    width: 0%;
+  }
+  body #navbar header {
+    font-size: 1.2em;
+  }
+  body #navbar a {
+    font-size: 0.5em;
+  }
+
+  body #main-doc {
+    margin-left: 0;
+    width: 100%;
+  }
+  body #main-doc header {
+    font-size: 2.2em;
+  }
+  body #main-doc section header {
+    font-size: 1.2em;
+  }
+
+  body #menu {
+    display: inline-block;
+  }
+}
