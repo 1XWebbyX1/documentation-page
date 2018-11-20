@@ -9,6 +9,8 @@ body {
   right: 0;
   padding: 4%;
   font-size: 1.2em;
+  opacity: 1;
+  transition: all 500ms ease;
 }
 
 #navbar {
@@ -85,15 +87,23 @@ body {
   display: none;
 }
 
+.rotate {
+  transform: rotate(180deg);
+  opacity: 0;
+  transition: all 500ms ease;
+}
+
 @media only screen and (max-width: 768px) {
   body #navbar {
     width: 0%;
+    background: rgba(0, 0, 0, 0.8);
   }
   body #navbar header {
     font-size: 1.2em;
+    background: #880E4F;
   }
   body #navbar a {
-    font-size: 0.5em;
+    font-size: 0.6em;
   }
 
   body #main-doc {
@@ -103,8 +113,11 @@ body {
   body #main-doc header {
     font-size: 2.2em;
   }
+  body #main-doc section {
+    margin: 5%;
+  }
   body #main-doc section header {
-    font-size: 1.2em;
+    font-size: 1.6em;
   }
 
   body #menu {

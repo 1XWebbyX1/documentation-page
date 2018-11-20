@@ -356,19 +356,20 @@ var App = function (_React$Component3) {_inherits(App, _React$Component3);
 
     {
       //for smaller screens----------------------------------------
+      $('#menu').toggleClass('fa-bars');
+      $('#menu').toggleClass('fa-times'); //toggle between menu and close icon
+
+      //animation
+      $('#menu').addClass('rotate');
+      setTimeout(function () {$('#menu').removeClass('rotate');}, 500);
       //check if menu is in display or hidden---------------------
       this.setState({
         display: !this.state.display });
 
-      console.log(this.state.display);
       if (this.state.display) {
-        $('#main-doc').css('width', '70%'); //adjust doc and menu width
         $('#navbar').css('width', '30%');
-        $('#main-doc').css('margin-left', '30%'); //move doc from left
       } else {
-        $('#main-doc').css('width', '100%');
         $('#navbar').css('width', '0%'); //hide the menu
-        $('#main-doc').css('margin-left', '0');
       }
     } }, { key: 'render', value: function render()
 
@@ -404,7 +405,7 @@ $(window).on('scroll', function () {
 
   //to check which section is in view-----------------------------
   section.each(function () {
-    var top = $(this).offset().top - 100,
+    var top = $(this).offset().top - 400,
     bottom = top + $(this).outerHeight();
 
     if (cur_pos >= top && cur_pos <= bottom) {
@@ -424,7 +425,7 @@ nav.find('a').on('click', function () {
   id = $this.attr('href');
 
   $('html, body').animate({
-    scrollTop: $(id).offset().top },
+    scrollTop: $(id).offset().top - 200 },
   500);
 
   return false;

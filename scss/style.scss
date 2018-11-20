@@ -1,11 +1,11 @@
 
 $color: white;
-$shadow: #9FA8DA;
+$primary: #880E4F;
 
 //font sizes------------------------------
 $lg: 2em;
 $md: 1.2em;
-$sm: 0.5em;
+$sm: 0.6em;
 //----------------------------------------
 
 body{
@@ -20,6 +20,8 @@ body{
   right: 0;
   padding: 4%;
   font-size: $md;
+  opacity: 1;
+  transition: all 500ms ease;
 }
 
 //NAVBAR STYLES__________________________________
@@ -28,7 +30,7 @@ body{
   width: 20%;
   height: 100%;
   background: lighten(#000, 20%);
-  border-top: 4px solid #880E4F;
+  border-top: 4px solid $primary;
  box-shadow: 2px 0 2px black;
   overflow-y: scroll;
   
@@ -52,12 +54,12 @@ body{
         padding-top: 4%;
         font-size: $md;
         &:hover {
-          color: #880E4F;
+          color: $primary;
         }
       }
     }
     a.active{
-        background: #880E4F;
+        background: $primary;
         color: white;
       }
   }
@@ -75,7 +77,7 @@ body{
  > header{
     font-size: 2.5em;
     padding: 4%;
-    border-top: 4px solid #880E4F;
+    border-top: 4px solid $primary;
     border-left: 4px solid black;
     box-shadow: 0px 2px 1px rgba(0, 0, 0, 1) inset;
   }
@@ -83,7 +85,7 @@ body{
   section{
     margin: 4%;
     >header{
-      border-bottom: 2px solid #880E4F;
+      border-bottom: 2px solid $primary;
       font-size: $lg;
       font-weight: bold;
       padding-left: 1%;
@@ -107,12 +109,20 @@ body{
 }
 
 
+.rotate{
+  transform:rotate(180deg);
+  opacity: 0;
+  transition: all 500ms ease;
+}
+
 
 @media only screen and (max-width: 768px) {
   body #navbar{
     width: 0%;
+    background: rgba(0, 0, 0, 0.8);
     header{
       font-size: $md;
+      background: $primary;
     }
     a{
       font-size: $sm;
@@ -127,8 +137,9 @@ body{
     }
     
     section{
+      margin: 5%;
       header{
-        font-size: $md;
+        font-size: 1.6em;
       }
     }
   }
